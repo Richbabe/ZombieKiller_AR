@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
@@ -63,6 +63,7 @@ public class PlayerShooting : MonoBehaviour
 
         if (PositionX != 0 || PositionY != 0)
         {
+            player.GetComponent<PlayerMovement>().FaceWithMove = false;
             player.transform.LookAt(new Vector3(player.transform.position.x + PositionX, player.transform.position.y, player.transform.position.z + PositionY));
             //Debug.Log("aaa");
         }
@@ -140,6 +141,7 @@ public class PlayerShooting : MonoBehaviour
 
     void OnJoystickMoveEnd(MovingJoystick move)
     {
+        player.GetComponent<PlayerMovement>().FaceWithMove = true;
         if (move.joystickName.Equals("Fire"))
         {
             switch (gunType)
