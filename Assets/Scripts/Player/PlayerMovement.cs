@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody playerRigidbody;//玩家刚体
     private int floorMask;//保存layerMask,使得Raycast只照射Floor
     private float camRayLength = 100f;//从摄像机发出的射线长度
+
+    public bool FaceWithMove = true;
 
     private void Awake()
     {
@@ -45,11 +47,22 @@ public class PlayerMovement : MonoBehaviour
         {
             //transform.LookAt(new Vector3(transform.position.x + PositionX, transform.position.y, transform.position.z + PositionY));
 
-            movement.Set(PositionX, 0f, PositionY);
+            //设置玩家朝向
+            if (FaceWithMove)
+            {
+                transform.LookAt(new Vector3(transform.position.x + PositionX, transform.position.y, transform.position.z + PositionY));
+            }
 
-            movement = movement.normalized * speed * Time.deltaTime;//normalized为了保证每个方向（包括斜着移动）速度一样
+            //movement.Set(PositionX, 0f, PositionY);
 
-            playerRigidbody.MovePosition(transform.position + movement);
+            //movement = Vector3.forward * speed * Time.deltaTime;//normalized为了保证每个方向（包括斜着移动）速度一样
+
+            //playerRigidbody.MovePosition(transform.position + movement);
+
+            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+
+
+
 
             anim.SetBool("IsWalking", true);//设置Animator中的IsWalking参数
         }
