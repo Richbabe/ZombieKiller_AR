@@ -13,14 +13,5 @@
 ## 二.3分钟视频网址
 [整体游戏流程](https://www.bilibili.com/video/av26102124)  
 
-## 三.游戏设计文档链接
-[游戏策划初版](https://docs.qq.com/doc/BFjuzk21iQfT0Za1Gd05GfDw2kOKt72U0FX72)  
-
-## 四.代码链接(由于安卓项目太大无法上传)
-[IOS](https://github.com/Richbabe/ZombieKiller_PC)
-
-## 五.apk下载链接
-[APK](https://github.com/WeakestCoder/EatWhat/raw/master/final_zombie.apk)
-
-## 六.识别图片链接
+## 三.识别图片链接
 [识别图片](https://github.com/Bobkong/Zombie_AR/blob/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180511171127.jpg)
